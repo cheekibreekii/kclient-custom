@@ -6,6 +6,7 @@ var PASSWORD = process.env.PASSWORD || 'abc';
 var SUBFOLDER = process.env.SUBFOLDER || '/';
 var TITLE = process.env.TITLE || 'KasmVNC Client';
 var FM_HOME = process.env.FM_HOME || '/config';
+var KASMPORT = process.env.KASMPORT || 6900;
 
 //// Application Variables ////
 var socketIO = require('socket.io');
@@ -181,4 +182,4 @@ aio.on('connection', function (socket) {
 
 // Spin up application on 6900
 app.use(SUBFOLDER, baseRouter);
-http.listen(6900);
+http.listen(KASMPORT);
